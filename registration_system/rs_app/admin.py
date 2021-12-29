@@ -3,11 +3,11 @@ from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser, AdminHOD, Staffs, Courses, Subjects, Students, Attendance, AttendanceReport, LeaveReportStudent, LeaveReportStaff, FeedBackStudent, FeedBackStaffs, NotificationStudent, NotificationStaffs
 
 # Register your models here.
-class UserModel(UserAdmin):
-    pass
+# class UserModel(UserAdmin):
+#     pass
 
 
-admin.site.register(CustomUser, UserModel)
+admin.site.register(CustomUser)
 
 admin.site.register(AdminHOD)
 admin.site.register(Staffs)
