@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "system-registration-api"
+version = "0.1.0"
+description = ""
+authors = ["faroukibrahim-fii <farouk94i@yahoo.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^4.0"
+djangorestframework = "^3.13.1"
+djangorestframework-simplejwt = "^5.0.0"
+django-environ = "^0.8.1"
+django-cors-headers = "^3.10.1"
+gunicorn = "^20.1.0"
+psycopg2-binary = "^2.9.3"
+PyJWT = "^2.3.0"
+whitenoise = "^5.3.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
