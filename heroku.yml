@@ -4,6 +4,6 @@ build:
 release:
   image: web
 run:
-  web: gunicorn project.wsgi --workers 4
+  web: gunicorn student_management_system.wsgi --workers 4
 
 
