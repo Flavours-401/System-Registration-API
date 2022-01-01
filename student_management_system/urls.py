@@ -8,7 +8,7 @@ from .views import MyTokenObtainPairCustomView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path("api/v1/student_management/", include("student_management_app.urls")),
+    path("api/v1/student_management/", include("student_management_app.urls")),
     path("api-auth/", include("rest_framework.urls")),
     path(
         "api/token/",

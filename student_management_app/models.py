@@ -17,10 +17,9 @@ class SessionYearModel(models.Model):
 class CustomUser(AbstractUser):
     user_type_data = ((1, "HOD"), (2, "Staff"), (3, "Student"))
     user_type = models.CharField(default=1, choices=user_type_data, max_length=10)
-    # owner = models.ForeignKey(
-    #     get_user_model(), on_delete=models.CASCADE, null=True, blank=True
-    # )
-
+    is_admin = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
+    is_student = models.BooleanField(default=False)
 
 
 class AdminHOD(models.Model):
@@ -40,17 +39,12 @@ class Staffs(models.Model):
     objects = models.Manager()
 
 
-
 class Courses(models.Model):
     id = models.AutoField(primary_key=True)
     course_name = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = models.Manager()
-
-    # def __str__(self):
-	#     return self.course_name
-
 
 
 class Subjects(models.Model):
@@ -78,7 +72,6 @@ class Students(models.Model):
 
 
 class Attendance(models.Model):
-    # Subject Attendance
     id = models.AutoField(primary_key=True)
     subject_id = models.ForeignKey(Subjects, on_delete=models.DO_NOTHING)
     attendance_date = models.DateField()
@@ -89,7 +82,6 @@ class Attendance(models.Model):
 
 
 class AttendanceReport(models.Model):
-    # Individual Student Attendance
     id = models.AutoField(primary_key=True)
     student_id = models.ForeignKey(Students, on_delete=models.DO_NOTHING)
     attendance_id = models.ForeignKey(Attendance, on_delete=models.CASCADE)
