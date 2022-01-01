@@ -1,6 +1,6 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
-# from student_management_app.templates import
+
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -13,7 +13,3 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
 class MyTokenObtainPairCustomView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
-
-# def csrf_failure(request, reason=""):
-#     ctx = {'message': 'some custom messages'}
-#     return render_to_response(, ctx)

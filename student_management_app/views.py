@@ -14,6 +14,9 @@ from .models import CustomUser, AdminHOD, Staffs, Courses, Subjects, Students, A
 from .permissions import IsOwnerOrReadOnly
 from .serializer import student_management_Serializer
 
+def csrf_failure(request, reason=""):
+    ctx = {'message': 'some custom messages'}
+    return render("student_management_app/templates/403_csrf.html", ctx)
 
 class CustomUserList(ListCreateAPIView):
     queryset = CustomUser.objects.all()
